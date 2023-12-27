@@ -16,7 +16,7 @@ public class ClienteServices {
     public ArrayList<ClienteModel> obtenerclientes(){
         return  (ArrayList<ClienteModel>)
 
-                clienteRepository.findAll();
+                clienteRepository.obtener_clientes();
     }
 
     public  ClienteModel guardarCliente (ClienteModel cliente  ){

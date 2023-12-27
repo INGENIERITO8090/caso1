@@ -13,15 +13,13 @@ public class ClienteController {
 @Autowired
     ClienteServices clienteService;
 
-@GetMapping()
+@GetMapping(path = "/all")
     public ArrayList<ClienteModel> obternerclientes(){
      return  clienteService.obtenerclientes();
 }
 @PostMapping()
     public  ClienteModel guardarCliente(@RequestBody ClienteModel cliente){
     return  this.clienteService.guardarCliente(cliente);
-
-
 }
 
 

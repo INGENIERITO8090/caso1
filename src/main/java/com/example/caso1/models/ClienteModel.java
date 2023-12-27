@@ -10,23 +10,28 @@ import java.util.Date;
 public class ClienteModel {
 
     @Id
-    private   int id ;
+    private   int numerodoc ;
     private  String  nombre;
     private  String  apeliido;
     private String fechanacimiento;
 
-    private  int ciudad ;
+
+
+    @OneToOne ( cascade = CascadeType.ALL,optional = false)
+    @JoinColumn (name = "idCiudad")
+    private  CiudadModel ciudadModel;
+
     private  String  email;
     private int telefono;
     private String ocupacion;
 
 
-    public int getId() {
-        return id;
+    public int getNumerodoc() {
+        return numerodoc;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNumerodoc(int numerodoc) {
+        this.numerodoc = numerodoc;
     }
 
     public String getNombre() {
@@ -53,13 +58,8 @@ public class ClienteModel {
         this.fechanacimiento = fechanacimiento;
     }
 
-    public int getCiudad() {
-        return ciudad;
-    }
 
-    public void setCiudad(int ciudad) {
-        this.ciudad = ciudad;
-    }
+
 
     public String getEmail() {
         return email;
